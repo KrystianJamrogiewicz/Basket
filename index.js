@@ -10,6 +10,22 @@ class Basket {
 	add(item) {
 		this.items.push(item); // dodawanie przedmiotu do tablicy
 	}
+
+	// Metoda obliczania całkowitej wartości
+	getTotalValue() {
+		// Zastosowanie metody reduce
+		// prev = poprzednia waartość, curr = obecna waartość, 0 = początekowa waartość
+		return this.items.reduce((prev, curr) => prev + curr.price, 0);
+
+		// Zastosowanie pętli for
+		/*
+		let totalValue = 0;
+		for (let i = 0; i < this.items.length; i++) {
+			totalValue += this.items[i].price;
+		}
+		return totalValue;
+        */
+	}
 }
 
 // Stworzenie klasy Product - przedmiot
@@ -17,6 +33,10 @@ class Product {
 	constructor(productName, productPrice) {
 		this.name = productName;
 		this.price = productPrice;
+	}
+	// Metoda dodawania nowej ceny
+	setNewPrice(newPrice) {
+		this.price = newPrice;
 	}
 }
 
@@ -31,7 +51,8 @@ const cucumbers = new Product(
 	(productPrice = 8.65)
 );
 
-console.log(oranges);
-console.log(cucumbers);
+// Metoda dodawania przedmiotu do koszyka
+shopBasket.add(oranges);
+shopBasket.add(cucumbers);
 
-console.log(shopBasket);
+console.log(shopBasket.getTotalValue());
