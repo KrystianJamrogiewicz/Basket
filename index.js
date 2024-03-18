@@ -11,7 +11,7 @@ class Basket {
 		this.items.push(item); // dodawanie przedmiotu do tablicy
 	}
 
-	// Metoda obliczania całkowitej wartości
+	// Metoda obliczania całkowitej wartości koszyka
 	getTotalValue() {
 		// Zastosowanie metody reduce
 		// prev = poprzednia waartość, curr = obecna waartość, 0 = początekowa waartość
@@ -19,12 +19,30 @@ class Basket {
 
 		// Zastosowanie pętli for
 		/*
+
 		let totalValue = 0;
 		for (let i = 0; i < this.items.length; i++) {
 			totalValue += this.items[i].price;
 		}
 		return totalValue;
         */
+	}
+
+	// Metoda wyświetlania listy przedmiotów
+	showBasket() {
+		// Tablica items najpierw zostanie przetworzona przez map a potem przez forEach
+		this.items
+			.map(
+				(product, i) =>
+					`${i + 1}. ${product.name} - ${product.price.toFixed(2)} PLN`
+			)
+			// text dla tej funkcji to to co zwróciła metoda map
+			.forEach(text => console.log(text));
+	}
+
+	// Metoda usuwania przedmiotu z koszyka
+	remove(no) {
+		this.items.splice(no - 1, 1); // usuwanie przedmiotu o podanym indeksie i = indeks od którego zacznie się usówanie, 1 = ilość przedmiotów do usunięcia
 	}
 }
 
@@ -43,16 +61,23 @@ class Product {
 // Tworzenie obiektu
 const shopBasket = new Basket();
 const oranges = new Product(
-	(productName = "Pomarańcze ULZ"),
-	(productPrice = 7.55)
+	(productName = "Pomarańcze LUZ"),
+	(productPrice = 7.05)
 );
 const cucumbers = new Product(
 	(productName = "Ogórek duży"),
-	(productPrice = 8.65)
+	(productPrice = 5.6)
 );
 
-// Metoda dodawania przedmiotu do koszyka
+// Wywoływanie metod
+
 shopBasket.add(oranges);
 shopBasket.add(cucumbers);
+shopBasket.add(cucumbers);
+shopBasket.add(oranges);
 
+console.log(shopBasket.getTotalValue());
+shopBasket.remove(1);
+
+shopBasket.showBasket();
 console.log(shopBasket.getTotalValue());
