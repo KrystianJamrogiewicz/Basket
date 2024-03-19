@@ -57,27 +57,3 @@ class Product {
 		this.price = newPrice;
 	}
 }
-
-// Tworzenie obiektu
-const shopBasket = new Basket();
-const oranges = new Product(
-	(productName = "Pomarańcze LUZ"),
-	(productPrice = 7.05)
-);
-const cucumbers = new Product(
-	(productName = "Ogórek duży"),
-	(productPrice = 5.6)
-);
-
-// Wywoływanie metod
-
-shopBasket.add(oranges);
-shopBasket.add(cucumbers);
-shopBasket.add(cucumbers);
-shopBasket.add(oranges);
-
-console.log(shopBasket.getTotalValue());
-shopBasket.remove(1);
-
-shopBasket.showBasket();
-console.log(shopBasket.getTotalValue());
