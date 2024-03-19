@@ -29,15 +29,12 @@ class Basket {
 	}
 
 	// Metoda wyświetlania listy przedmiotów
-	showBasket() {
+	getBasketSummary() {
 		// Tablica items najpierw zostanie przetworzona przez map a potem przez forEach
-		this.items
-			.map(
-				(product, i) =>
-					`${i + 1}. ${product.name} - ${product.price.toFixed(2)} PLN`
-			)
-			// text dla tej funkcji to to co zwróciła metoda map
-			.forEach(text => console.log(text));
+		return this.items.map(
+			(product, i) =>
+				`${i + 1}. ${product.name} - ${product.price.toFixed(2)} PLN`
+		);
 	}
 
 	// Metoda usuwania przedmiotu z koszyka

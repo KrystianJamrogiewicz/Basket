@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
@@ -12,22 +13,22 @@
         <h1>Lista produktów</h1>
         <ul>
             <li>
-                <strong>pomidory</strong> - 9.75 <button class="btn-buy-product">
+                <strong>pomidory</strong> - 9.75 <button class="btn-buy-product" data-name="tomato" data-price="9.75">
                     Kup
                 </button>
             </li>
             <li>
-                <strong>ogórek</strong> - 6.35 <button class="btn-buy-product">
+                <strong>ogórek</strong> - 6.35 <button class="btn-buy-product" data-name="cucumber" data-price=" 6.35">
                     Kup
                 </button>
             </li>
             <li>
-                <strong>pomarńcze</strong> - 4.15 <button class="btn-buy-product">
+                <strong>pomarńcze</strong> - 4.15 <button class="btn-buy-product" data-name="orange" data-price="4.15">
                     Kup
                 </button>
             </li>
             <li>
-                <strong>fasola</strong> - 5.85 <button class="btn-buy-product">
+                <strong>fasola</strong> - 5.85 <button class="btn-buy-product" data-name="bean" data-price="5.85">
                     Kup
                 </button>
             </li>
@@ -35,9 +36,11 @@
     </section>
     <section class="basket">
         <h1>Koszyk</h1>
-        <ul></ul>
+        <ul class="basket-list"></ul>
         <button class="btn-buy-all" disabled>Złóż zamówienie</button>
     </section>
+    <script src="src/basket.js"></script>
+    <script src="src/ui.js"></script>
 </body>
 
 </html>
