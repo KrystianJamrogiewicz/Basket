@@ -31,15 +31,24 @@ class Basket {
 	// Metoda wyświetlania listy przedmiotów
 	getBasketSummary() {
 		// Tablica items najpierw zostanie przetworzona przez map a potem przez forEach
-		return this.items.map(
-			(product, i) =>
-				`${i + 1}. ${product.name} - ${product.price.toFixed(2)} PLN`
-		);
+		return this.items.map((product, i) => {
+			return {
+				id: i + 1,
+				text: `${i + 1}. ${product.name} - ${product.price.toFixed(2)} PLN`,
+			};
+		});
 	}
 
 	// Metoda usuwania przedmiotu z koszyka
 	remove(no) {
 		this.items.splice(no - 1, 1); // usuwanie przedmiotu o podanym indeksie i = indeks od którego zacznie się usówanie, 1 = ilość przedmiotów do usunięcia
+	}
+
+	// Metoda czyszcząca koszyk
+	clear() {
+		this.items.length = 0;
+		// this.items = [];
+		// this.items.splice(0);
 	}
 }
 
