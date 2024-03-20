@@ -11,7 +11,7 @@
 <body>
     <section class="products">
         <h1>Lista produktów</h1>
-        <ul>
+        <ul class="products-list">
             <li>
                 <strong>pomidory</strong> - 9.75 <button class="btn-buy-product" data-name="tomato" data-price="9.75">
                     Kup
@@ -39,8 +39,17 @@
         <ul class="basket-list"></ul>
         <button class="btn-buy-all" disabled>Złóż zamówienie</button>
     </section>
+    <section class="admin-add-product">
+        <h1>Panel administratora</h1>
+        <form class="form-add-product">
+            <input type="text" name="product-name" placeholder="Podaj nazwę" required>
+            <input type="number" name="product-price" placeholder="Podaj cenę" required>
+            <button type="submit">Dodaj</button>
+        </form>
+    </section>
     <script src="src/basket.js"></script>
     <script src="src/ui.js"></script>
+    <script src="src/adminUi.js"></script>
 </body>
 
 </html>
