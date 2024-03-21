@@ -3,13 +3,13 @@ const nameInput = document.querySelector('[name="product-name"]'); // Przypisani
 const priceInput = document.querySelector('[name="product-price"]');
 const productsUl = document.querySelector(".products-list");
 
-const addProductToShop = event => {
-	event.preventDefault(); // Wyłącza automatyczne odświerzenie strony po jakimś wydarzeniu (dane ze strony nie znikają np po przesłaniu formularza)
+const saveProductToLocalStorage = (name, price) => {
+	const productsList = JSON.parse(localStorage.getItem("shop-products")) ?? []; // Pobiera dane z localStorage o kluczu hop-products i zamiana na typ obiekt, sprawdza czy obiekt nie jest pusty jeśli jest to przypisuje pustą tablice.
+	productsList.push({ name, price }); // Dodaje do pobranego nowe obiekty. {} Tworzy obiekt z właściwością o tej samej nazwie co przesłana wartość
+	localStorage.setItem("shop-products", JSON.stringify(productsList)); // Przesłanie danych w formacie string do localStorage. Zamiana (usówa stare, zapisuje nowe) danych w localStorage o kluczu shop-products na nowe
+};
 
-	// Sposoby na odczytanie wartości przesłąnej do formularza
-	const name = event.target.elements["product-name"].value; // Szybszy dostęp do danych
-	const price = Number(priceInput.value); // Prostsze
-
+const addProductToShop = (name, price) => {
 	const newLi = document.createElement("li"); // Stała tworząca wiersz listy li
 	const newStrong = document.createElement("strong"); // Stała tworząca element strong - pogrubiony tekst
 	newStrong.innerText = name; // Wpisanie do strong tekstu (nazwy produktu)
@@ -32,5 +32,25 @@ const addProductToShop = event => {
 	productsUl.appendChild(newLi);
 };
 
+const loadProdactsFromLocalStorage = () => {
+	const productsList = JSON.parse(localStorage.getItem("shop-products")) ?? [];
+
+	for (const { name, price } of productsList) {
+		addProductToShop(name, price);
+	}
+};
+
+const handleAddProductFormSubmit = event => {
+	event.preventDefault(); // Wyłącza automatyczne odświerzenie strony po jakimś wydarzeniu (dane ze strony nie znikają np po przesłaniu formularza)
+
+	// Sposoby na odczytanie wartości przesłąnej do formularza
+	const nameFromInput = event.target.elements["product-name"].value; // Szybszy dostęp do danych
+	const priceFromInput = Number(priceInput.value); // Prostsze
+
+	addProductToShop(nameFromInput, priceFromInput);
+	saveProductToLocalStorage(nameFromInput, priceFromInput);
+};
+
 // Funkcja wywoływana w momencie przesłania formularza
-addProductForm.addEventListener("submit", addProductToShop);
+addProductForm.addEventListener("submit", handleAddProductFormSubmit);
+loadProdactsFromLocalStorage();

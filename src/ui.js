@@ -66,3 +66,5 @@ for (const btn of buyBtns) {
 }
 
 buyAllBtn.addEventListener("click", buyAllProducts); // Dodanie do przycisku buyAllBtn zdarzenia klikniecia, które wywoła funkcje: buyAllProducts.
+
+createBasketUi();
