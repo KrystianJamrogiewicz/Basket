@@ -9,4 +9,4 @@ Założenia:
 - dodawanie nowych produktów do sklepu (z panelu administratora)
 - usuwanie produktów ze sklepu (z panelu administratora)
 - przechowywanie danych w localStorage
-# Link do strony z projektem: https://koszyk.ct8.pl/
+# Link do strony z projektem: https://basket.ct8.pl/
