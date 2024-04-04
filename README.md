@@ -1,11 +1,5 @@
 # Koszyk
-Projekt jest przeznaczony do praktycznej nauki języka JavaScript.
-
-
-Tworzone na podstawie poradnika: https://www.youtube.com/watch?v=2oNidre8q0A&list=PLTB10RRQTwcRlCw80RZ12EijW9aUsqTi-&index=8
-
-
-Projekt koszyka sklepu internetowego wykonany w technologii JavaScript, HTML.
+Projekt koszyka sklepu internetowego wykonany w technologii JavaScript, HTML, CSS.
 
 
 Założenia:
