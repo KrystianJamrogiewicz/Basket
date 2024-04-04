@@ -50,7 +50,9 @@ class Basket {
 		return this.items.map((product, i) => {
 			return {
 				id: i + 1, // Uzyskanie id produktu z indeksu tablicy
-				text: `${i + 1}. ${product.name} - ${product.price.toFixed(2)} PLN`, //Wypisanie atrybutów produktu
+				//text: `${i + 1}. ${product.name}  ${product.price.toFixed(2)} PLN`, //Wypisanie atrybutów produktu
+				name: product.name,
+				price: product.price.toFixed(2),
 			};
 		});
 	}

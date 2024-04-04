@@ -4,49 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Basket</title>
+    <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
-    <section class="products">
-        <h1>Lista produktów</h1>
-        <ul class="products-list">
-            <li>
-                <strong>pomidory</strong> - 9.75 <button class="btn-buy-product" data-name="tomato" data-price="9.75">
-                    Kup
-                </button>
-            </li>
-            <li>
-                <strong>ogórek</strong> - 6.35 <button class="btn-buy-product" data-name="cucumber" data-price=" 6.35">
-                    Kup
-                </button>
-            </li>
-            <li>
-                <strong>pomarńcze</strong> - 4.15 <button class="btn-buy-product" data-name="orange" data-price="4.15">
-                    Kup
-                </button>
-            </li>
-            <li>
-                <strong>fasola</strong> - 5.85 <button class="btn-buy-product" data-name="bean" data-price="5.85">
-                    Kup
-                </button>
-            </li>
-        </ul>
-    </section>
-    <section class="basket">
-        <h1>Koszyk</h1>
-        <ul class="basket-list"></ul>
-        <button class="btn-buy-all" disabled>Złóż zamówienie</button>
-    </section>
-    <section class="admin-add-product">
+    <div id="products-basket">
+        <div class="products">
+            <h1>Lista produktów</h1>
+            <ul class="products-list">
+                <li>
+                    <strong>tomato</strong>9.75<button class="btn-buy-product" data-name="tomato" data-price="9.75">
+                        Kup
+                    </button>
+                </li>
+                <li>
+                    <strong>cucumber</strong>6.35<button class="btn-buy-product" data-name="cucumber"
+                        data-price=" 6.35">
+                        Kup
+                    </button>
+                </li>
+                <li>
+                    <strong>orange</strong>4.15<button class="btn-buy-product" data-name="orange" data-price="4.15">
+                        Kup
+                    </button>
+                </li>
+                <li>
+                    <strong>bean</strong>5.85<button class="btn-buy-product" data-name="bean" data-price="5.85">
+                        Kup
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="basket">
+            <h1>Koszyk</h1>
+            <ul class="basket-list"></ul>
+            <button class="btn-buy-all" disabled>Złóż zamówienie</button>
+        </div>
+    </div>
+    <div class="admin">
         <h1>Panel administratora</h1>
-        <form class="form-add-product">
-            <input type="text" name="product-name" placeholder="Podaj nazwę" required>
-            <input type="number" name="product-price" placeholder="Podaj cenę" required>
-            <button type="submit">Dodaj</button>
-        </form>
-    </section>
+        <div id="options">
+            <div id="add">
+                <h3>Dodawanie produktu</h3>
+                <form class="form-add-product">
+                    <input type="text" name="product-name" placeholder="Podaj nazwę" required>
+                    <input type="number" name="product-price" placeholder="Podaj cenę" required>
+                    <button type="submit">Dodaj</button>
+                </form>
+            </div>
+            <div id="remove">
+                <h3>Usuwanie produktu</h3>
+                <form class="form-remove-product">
+                    <input type="text" name="remove-product" placeholder="Podaj nazwę" required>
+                    <button type="submit">Usuń</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="src/basket.js"></script>
     <script src="src/ui.js"></script>
     <script src="src/adminUi.js"></script>

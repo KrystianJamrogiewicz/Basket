@@ -27,13 +27,17 @@ function addProductToBasket(event) {
 // Funkcja tworzenia listy przedmiotów w koszyku
 const createBasketUi = () => {
 	basketUl.innerText = ""; // Czyszczenie listy przedmiotów o klasie basket-list w koszyku.
-	for (const { id, text } of basket.getBasketSummary()) {
+	for (const { id, name, price } of basket.getBasketSummary()) {
 		// Przypisanie do stałej id i text wartości zwrócone przez metode getBasketSummary klasy Basket.
 		const newLi = document.createElement("li"); // Stworzenie nowego elementu listy li
-		newLi.innerText = text; // Wpisanie do nowego elementu listy li tekstu (nazwy przedmiotu i wartości)
-		newLi.addEventListener("click", removeItem); // Dodanie do nowego elementu listy li zdarzenia klikniecia (wywołanie metody removeItem)
+		const removeBtn = document.createElement("button");
+		removeBtn.classList.add("btn-remove-product");
+		removeBtn.innerText = "Usuń";
+		newLi.innerHTML = `${id}.&nbsp;<strong>${name}</strong> ${price}`; // Wpisanie do nowego elementu listy li tekstu (nazwy przedmiotu i wartości) &nbsp; - dodaje spacje
+		removeBtn.addEventListener("click", removeItem); // Dodanie do nowego elementu (przycisku) zdarzenia klikniecia (wywołanie metody removeItem)
 		newLi.dataset.id = id; // Dodanie do nowego elementu listy li atrybutu data-id (id przedmiotu)
 		basketUl.appendChild(newLi); // Dodanie do listy przedmiotów o klasie basket-list nowego elementu listy li
+		newLi.appendChild(removeBtn);
 	}
 
 	const basketTotalValue = basket.getTotalValue(); // Przypisanie do stałej basketTotalValue aktualnej wartości koszyka

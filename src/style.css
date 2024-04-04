@@ -1,0 +1,55 @@
+#products-basket {
+	display: flex;
+	justify-content: space-between;
+}
+
+.products {
+	border: 1px solid black;
+	width: 50%;
+	background-color: #f1f1f1;
+	padding: 20px;
+}
+.basket {
+	border: 2px solid black;
+	width: 50%;
+	background-color: #e7e6e6;
+	padding: 20px;
+}
+.admin {
+	margin-top: 100px;
+}
+
+#options {
+	display: flex;
+}
+#add {
+	width: 50%;
+}
+#remove {
+	width: 50%;
+}
+#options form,
+h3 {
+	display: flex;
+	justify-content: center;
+}
+
+.products-list li,
+.basket-list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.products-list li strong,
+.basket li strong {
+	flex-grow: 1;
+	margin-right: 10px;
+}
+
+.products-list li button,
+.basket li button {
+	margin-left: 30px;
+}
