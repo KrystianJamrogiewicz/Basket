@@ -1,4 +1,4 @@
-# Shopping Cart - Link to project page: https://basket.ct8.pl/
+# shoppingCart - Link to project page: https://basket.ct8.pl/
 Online shopping cart project made with JavaScript, HTML, CSS.
 
 
