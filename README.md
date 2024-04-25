@@ -1,12 +1,13 @@
-# Koszyk
-Projekt koszyka sklepu internetowego wykonany w technologii JavaScript, HTML, CSS.
+# Shopping Cart - Link to project page: https://basket.ct8.pl/
+Online shopping cart project made with JavaScript, HTML, CSS.
 
 
-Założenia:
+![image](https://github.com/KrystianJamrogiewicz/Basket/assets/155767356/229241b6-2994-4a30-a7c9-41f354d09bfc)
 
-- dodawanie i usuwanie produktów z koszyka (kliknięcie w przycisk)
-- składanie zamówienia (alert imitujący złożenie zamówienia)
-- dodawanie nowych produktów do sklepu (z panelu administratora)
-- usuwanie produktów ze sklepu (z panelu administratora)
-- przechowywanie danych w localStorage
-# Link do strony z projektem: https://basket.ct8.pl/
+
+Features:
+- Add and remove products from cart (click button)
+- Place order (alert imitating order placement)
+- Add new products to store (from admin panel)
+- Remove products from store (from admin panel)
+- Store data in localStorage
